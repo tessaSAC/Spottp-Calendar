@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "spottp-calendar",
+    "default": "spottp-calendar"
+  }
+}
