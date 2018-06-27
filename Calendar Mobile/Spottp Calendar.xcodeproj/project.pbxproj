@@ -12,6 +12,9 @@
 		8C49B83020E1EDE10085FA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B82E20E1EDE10085FA0B /* Main.storyboard */; };
 		8C49B83220E1EDE10085FA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B83120E1EDE10085FA0B /* Assets.xcassets */; };
 		8C49B83520E1EDE10085FA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B83320E1EDE10085FA0B /* LaunchScreen.storyboard */; };
+		8C49B83D20E20A020085FA0B /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B83C20E20A020085FA0B /* MonthView.swift */; };
+		8C49B83F20E20FC40085FA0B /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */; };
+		8C49B84120E211B80085FA0B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B84020E211B80085FA0B /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8C49B83120E1EDE10085FA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C49B83420E1EDE10085FA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C49B83620E1EDE10085FA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C49B83C20E20A020085FA0B /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		8C49B84020E211B80085FA0B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				8C49B82A20E1EDE10085FA0B /* AppDelegate.swift */,
 				8C49B82C20E1EDE10085FA0B /* ViewController.swift */,
+				8C49B83C20E20A020085FA0B /* MonthView.swift */,
+				8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */,
+				8C49B84020E211B80085FA0B /* CalendarView.swift */,
 				8C49B82E20E1EDE10085FA0B /* Main.storyboard */,
 				8C49B83120E1EDE10085FA0B /* Assets.xcassets */,
 				8C49B83320E1EDE10085FA0B /* LaunchScreen.storyboard */,
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C49B84120E211B80085FA0B /* CalendarView.swift in Sources */,
 				8C49B82D20E1EDE10085FA0B /* ViewController.swift in Sources */,
+				8C49B83F20E20FC40085FA0B /* WeekdaysView.swift in Sources */,
+				8C49B83D20E20A020085FA0B /* MonthView.swift in Sources */,
 				8C49B82B20E1EDE10085FA0B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = self.window {
+            // Millennial pink!!!
+            window.backgroundColor = UIColor(red: 1, green: 0.9412, blue: 0.7176, alpha: 1.0)
+            
+            // Get Navigation Controller
+            let nav = UINavigationController()
+            
+            // Embed ViewController into Navigation Controller
+            let mainView = ViewController()
+            nav.ViewControllers = [mainView]
+            
+            // Render Navigation Controller
+            window.rootViewController = nav
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 
