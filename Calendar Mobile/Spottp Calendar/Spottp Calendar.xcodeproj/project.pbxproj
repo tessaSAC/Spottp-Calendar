@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C49B82B20E1EDE10085FA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B82A20E1EDE10085FA0B /* AppDelegate.swift */; };
-		8C49B82D20E1EDE10085FA0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B82C20E1EDE10085FA0B /* ViewController.swift */; };
-		8C49B83020E1EDE10085FA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B82E20E1EDE10085FA0B /* Main.storyboard */; };
-		8C49B83220E1EDE10085FA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B83120E1EDE10085FA0B /* Assets.xcassets */; };
-		8C49B83520E1EDE10085FA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C49B83320E1EDE10085FA0B /* LaunchScreen.storyboard */; };
-		8C49B83D20E20A020085FA0B /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B83C20E20A020085FA0B /* MonthView.swift */; };
-		8C49B83F20E20FC40085FA0B /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */; };
-		8C49B84120E211B80085FA0B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C49B84020E211B80085FA0B /* CalendarView.swift */; };
+		8C96548C20E499920020D133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548B20E499920020D133 /* AppDelegate.swift */; };
+		8C96548E20E499920020D133 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548D20E499920020D133 /* ViewController.swift */; };
+		8C96549120E499920020D133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96548F20E499920020D133 /* Main.storyboard */; };
+		8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */; };
+		8C96549620E499920020D133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549520E499920020D133 /* Assets.xcassets */; };
+		8C96549920E499920020D133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549720E499920020D133 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C49B82720E1EDE10085FA0B /* Spottp Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spottp Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C49B82A20E1EDE10085FA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C49B82C20E1EDE10085FA0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C49B82F20E1EDE10085FA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C49B83120E1EDE10085FA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8C49B83420E1EDE10085FA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C49B83620E1EDE10085FA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C49B83C20E20A020085FA0B /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
-		8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
-		8C49B84020E211B80085FA0B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8C96548820E499910020D133 /* Spottp Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spottp Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C96548B20E499920020D133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C96548D20E499920020D133 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C96549020E499920020D133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spottp_Calendar.xcdatamodel; sourceTree = "<group>"; };
+		8C96549520E499920020D133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C96549820E499920020D133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C96549A20E499920020D133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C49B82420E1EDE10085FA0B /* Frameworks */ = {
+		8C96548520E499910020D133 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,34 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C49B81E20E1EDE10085FA0B = {
+		8C96547F20E499910020D133 = {
 			isa = PBXGroup;
 			children = (
-				8C49B82920E1EDE10085FA0B /* Spottp Calendar */,
-				8C49B82820E1EDE10085FA0B /* Products */,
+				8C96548A20E499910020D133 /* Spottp Calendar */,
+				8C96548920E499910020D133 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8C49B82820E1EDE10085FA0B /* Products */ = {
+		8C96548920E499910020D133 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C49B82720E1EDE10085FA0B /* Spottp Calendar.app */,
+				8C96548820E499910020D133 /* Spottp Calendar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C49B82920E1EDE10085FA0B /* Spottp Calendar */ = {
+		8C96548A20E499910020D133 /* Spottp Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				8C49B82A20E1EDE10085FA0B /* AppDelegate.swift */,
-				8C49B82C20E1EDE10085FA0B /* ViewController.swift */,
-				8C49B83C20E20A020085FA0B /* MonthView.swift */,
-				8C49B83E20E20FC40085FA0B /* WeekdaysView.swift */,
-				8C49B84020E211B80085FA0B /* CalendarView.swift */,
-				8C49B82E20E1EDE10085FA0B /* Main.storyboard */,
-				8C49B83120E1EDE10085FA0B /* Assets.xcassets */,
-				8C49B83320E1EDE10085FA0B /* LaunchScreen.storyboard */,
-				8C49B83620E1EDE10085FA0B /* Info.plist */,
+				8C96548B20E499920020D133 /* AppDelegate.swift */,
+				8C96548D20E499920020D133 /* ViewController.swift */,
+				8C96548F20E499920020D133 /* Main.storyboard */,
+				8C96549520E499920020D133 /* Assets.xcassets */,
+				8C96549720E499920020D133 /* LaunchScreen.storyboard */,
+				8C96549A20E499920020D133 /* Info.plist */,
+				8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */,
 			);
 			path = "Spottp Calendar";
 			sourceTree = "<group>";
@@ -76,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C49B82620E1EDE10085FA0B /* Spottp Calendar */ = {
+		8C96548720E499910020D133 /* Spottp Calendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C49B83920E1EDE10085FA0B /* Build configuration list for PBXNativeTarget "Spottp Calendar" */;
+			buildConfigurationList = 8C96549D20E499920020D133 /* Build configuration list for PBXNativeTarget "Spottp Calendar" */;
 			buildPhases = (
-				8C49B82320E1EDE10085FA0B /* Sources */,
-				8C49B82420E1EDE10085FA0B /* Frameworks */,
-				8C49B82520E1EDE10085FA0B /* Resources */,
+				8C96548420E499910020D133 /* Sources */,
+				8C96548520E499910020D133 /* Frameworks */,
+				8C96548620E499910020D133 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,26 +84,26 @@
 			);
 			name = "Spottp Calendar";
 			productName = "Spottp Calendar";
-			productReference = 8C49B82720E1EDE10085FA0B /* Spottp Calendar.app */;
+			productReference = 8C96548820E499910020D133 /* Spottp Calendar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C49B81F20E1EDE10085FA0B /* Project object */ = {
+		8C96548020E499910020D133 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = tessa;
 				TargetAttributes = {
-					8C49B82620E1EDE10085FA0B = {
+					8C96548720E499910020D133 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 8C49B82220E1EDE10085FA0B /* Build configuration list for PBXProject "Spottp Calendar" */;
+			buildConfigurationList = 8C96548320E499910020D133 /* Build configuration list for PBXProject "Spottp Calendar" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,57 +111,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 8C49B81E20E1EDE10085FA0B;
-			productRefGroup = 8C49B82820E1EDE10085FA0B /* Products */;
+			mainGroup = 8C96547F20E499910020D133;
+			productRefGroup = 8C96548920E499910020D133 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C49B82620E1EDE10085FA0B /* Spottp Calendar */,
+				8C96548720E499910020D133 /* Spottp Calendar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C49B82520E1EDE10085FA0B /* Resources */ = {
+		8C96548620E499910020D133 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C49B83520E1EDE10085FA0B /* LaunchScreen.storyboard in Resources */,
-				8C49B83220E1EDE10085FA0B /* Assets.xcassets in Resources */,
-				8C49B83020E1EDE10085FA0B /* Main.storyboard in Resources */,
+				8C96549920E499920020D133 /* LaunchScreen.storyboard in Resources */,
+				8C96549620E499920020D133 /* Assets.xcassets in Resources */,
+				8C96549120E499920020D133 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C49B82320E1EDE10085FA0B /* Sources */ = {
+		8C96548420E499910020D133 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C49B84120E211B80085FA0B /* CalendarView.swift in Sources */,
-				8C49B82D20E1EDE10085FA0B /* ViewController.swift in Sources */,
-				8C49B83F20E20FC40085FA0B /* WeekdaysView.swift in Sources */,
-				8C49B83D20E20A020085FA0B /* MonthView.swift in Sources */,
-				8C49B82B20E1EDE10085FA0B /* AppDelegate.swift in Sources */,
+				8C96548E20E499920020D133 /* ViewController.swift in Sources */,
+				8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */,
+				8C96548C20E499920020D133 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8C49B82E20E1EDE10085FA0B /* Main.storyboard */ = {
+		8C96548F20E499920020D133 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C49B82F20E1EDE10085FA0B /* Base */,
+				8C96549020E499920020D133 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8C49B83320E1EDE10085FA0B /* LaunchScreen.storyboard */ = {
+		8C96549720E499920020D133 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C49B83420E1EDE10085FA0B /* Base */,
+				8C96549820E499920020D133 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -175,7 +167,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8C49B83720E1EDE10085FA0B /* Debug */ = {
+		8C96549B20E499920020D133 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		8C49B83820E1EDE10085FA0B /* Release */ = {
+		8C96549C20E499920020D133 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,7 +274,7 @@
 			};
 			name = Release;
 		};
-		8C49B83A20E1EDE10085FA0B /* Debug */ = {
+		8C96549E20E499920020D133 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -296,7 +288,7 @@
 			};
 			name = Debug;
 		};
-		8C49B83B20E1EDE10085FA0B /* Release */ = {
+		8C96549F20E499920020D133 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -313,25 +305,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C49B82220E1EDE10085FA0B /* Build configuration list for PBXProject "Spottp Calendar" */ = {
+		8C96548320E499910020D133 /* Build configuration list for PBXProject "Spottp Calendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C49B83720E1EDE10085FA0B /* Debug */,
-				8C49B83820E1EDE10085FA0B /* Release */,
+				8C96549B20E499920020D133 /* Debug */,
+				8C96549C20E499920020D133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C49B83920E1EDE10085FA0B /* Build configuration list for PBXNativeTarget "Spottp Calendar" */ = {
+		8C96549D20E499920020D133 /* Build configuration list for PBXNativeTarget "Spottp Calendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C49B83A20E1EDE10085FA0B /* Debug */,
-				8C49B83B20E1EDE10085FA0B /* Release */,
+				8C96549E20E499920020D133 /* Debug */,
+				8C96549F20E499920020D133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */,
+			);
+			currentVersion = 8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */;
+			path = Spottp_Calendar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 8C49B81F20E1EDE10085FA0B /* Project object */;
+	rootObject = 8C96548020E499910020D133 /* Project object */;
 }
