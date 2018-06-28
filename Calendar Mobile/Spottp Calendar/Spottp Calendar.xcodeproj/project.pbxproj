@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C109B3320E4A3140085FC42 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C109B3220E4A3140085FC42 /* EventViewController.swift */; };
+		8C109B3520E4A5E60085FC42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C109B3420E4A5E60085FC42 /* LoginViewController.swift */; };
 		8C96548C20E499920020D133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548B20E499920020D133 /* AppDelegate.swift */; };
 		8C96548E20E499920020D133 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548D20E499920020D133 /* ViewController.swift */; };
 		8C96549120E499920020D133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96548F20E499920020D133 /* Main.storyboard */; };
 		8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */; };
 		8C96549620E499920020D133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549520E499920020D133 /* Assets.xcassets */; };
 		8C96549920E499920020D133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549720E499920020D133 /* LaunchScreen.storyboard */; };
+		8CEE74C020E4AA8A002307CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CEE74BF20E4AA8A002307CB /* GoogleService-Info.plist */; };
+		BFF5E1D2860D35D7275AA950 /* Pods_Spottp_Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB2342AB59DB9AAD3936953 /* Pods_Spottp_Calendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		872F4B54C500E955273984D4 /* Pods-Spottp Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spottp Calendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spottp Calendar/Pods-Spottp Calendar.release.xcconfig"; sourceTree = "<group>"; };
+		8C109B3220E4A3140085FC42 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8C109B3420E4A5E60085FC42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C96548820E499910020D133 /* Spottp Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spottp Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C96548B20E499920020D133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C96548D20E499920020D133 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,9 @@
 		8C96549520E499920020D133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C96549820E499920020D133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C96549A20E499920020D133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CEE74BF20E4AA8A002307CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FA1065BEBB667DA7BCB362C /* Pods-Spottp Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spottp Calendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spottp Calendar/Pods-Spottp Calendar.debug.xcconfig"; sourceTree = "<group>"; };
+		EEB2342AB59DB9AAD3936953 /* Pods_Spottp_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spottp_Calendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF5E1D2860D35D7275AA950 /* Pods_Spottp_Calendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30A867CF4FF5E82CFCDC0660 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FA1065BEBB667DA7BCB362C /* Pods-Spottp Calendar.debug.xcconfig */,
+				872F4B54C500E955273984D4 /* Pods-Spottp Calendar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8C96547F20E499910020D133 = {
 			isa = PBXGroup;
 			children = (
 				8C96548A20E499910020D133 /* Spottp Calendar */,
 				8C96548920E499910020D133 /* Products */,
+				30A867CF4FF5E82CFCDC0660 /* Pods */,
+				C9BBF14F04CDAF89D3C14E2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +81,23 @@
 				8C96548B20E499920020D133 /* AppDelegate.swift */,
 				8C96548D20E499920020D133 /* ViewController.swift */,
 				8C96548F20E499920020D133 /* Main.storyboard */,
+				8C109B3420E4A5E60085FC42 /* LoginViewController.swift */,
+				8C109B3220E4A3140085FC42 /* EventViewController.swift */,
 				8C96549520E499920020D133 /* Assets.xcassets */,
 				8C96549720E499920020D133 /* LaunchScreen.storyboard */,
 				8C96549A20E499920020D133 /* Info.plist */,
+				8CEE74BF20E4AA8A002307CB /* GoogleService-Info.plist */,
 				8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */,
 			);
 			path = "Spottp Calendar";
+			sourceTree = "<group>";
+		};
+		C9BBF14F04CDAF89D3C14E2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEB2342AB59DB9AAD3936953 /* Pods_Spottp_Calendar.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C96549D20E499920020D133 /* Build configuration list for PBXNativeTarget "Spottp Calendar" */;
 			buildPhases = (
+				6C97C2A12954BDDBEEAF61D4 /* [CP] Check Pods Manifest.lock */,
 				8C96548420E499910020D133 /* Sources */,
 				8C96548520E499910020D133 /* Frameworks */,
 				8C96548620E499910020D133 /* Resources */,
+				638CCACE769EAE02ABCD4889 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C96549920E499920020D133 /* LaunchScreen.storyboard in Resources */,
+				8CEE74C020E4AA8A002307CB /* GoogleService-Info.plist in Resources */,
 				8C96549620E499920020D133 /* Assets.xcassets in Resources */,
 				8C96549120E499920020D133 /* Main.storyboard in Resources */,
 			);
@@ -134,13 +170,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		638CCACE769EAE02ABCD4889 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Spottp Calendar/Pods-Spottp Calendar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spottp Calendar/Pods-Spottp Calendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C97C2A12954BDDBEEAF61D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spottp Calendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8C96548420E499910020D133 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8C96548E20E499920020D133 /* ViewController.swift in Sources */,
+				8C109B3320E4A3140085FC42 /* EventViewController.swift in Sources */,
 				8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */,
+				8C109B3520E4A5E60085FC42 /* LoginViewController.swift in Sources */,
 				8C96548C20E499920020D133 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +357,11 @@
 		};
 		8C96549E20E499920020D133 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FA1065BEBB667DA7BCB362C /* Pods-Spottp Calendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD43HVMP94;
 				INFOPLIST_FILE = "Spottp Calendar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tessa.Spottp-Calendar";
@@ -290,9 +373,11 @@
 		};
 		8C96549F20E499920020D133 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 872F4B54C500E955273984D4 /* Pods-Spottp Calendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD43HVMP94;
 				INFOPLIST_FILE = "Spottp Calendar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tessa.Spottp-Calendar";
