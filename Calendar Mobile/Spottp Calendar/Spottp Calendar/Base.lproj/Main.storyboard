@@ -181,14 +181,47 @@
             </objects>
             <point key="canvasLocation" x="-385" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Month View Controller-->
         <scene sceneID="fod-Po-9r9">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sl5-hI-P5D" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sl5-hI-P5D" customClass="MonthViewController" customModule="Spottp_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FzF-ym-7RT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-1P-pTe" customClass="MonthCollectionView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydo-rj-VkI">
+                                    <size key="itemSize" width="211" height="211"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="aYl-gX-Hpo" customClass="DayCollectionViewCell" customModule="Spottp_Calendar" customModuleProvider="target">
+                                        <rect key="frame" x="82" y="0.0" width="211" height="211"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.89700029290857164" blue="0.96817412997922747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sl5-hI-P5D" id="QYY-wG-pzB"/>
+                                    <outlet property="delegate" destination="sl5-hI-P5D" id="StA-aV-HP9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mn3-1P-pTe" firstAttribute="top" secondItem="XE5-FJ-Iij" secondAttribute="top" id="0va-65-YsC"/>
+                            <constraint firstItem="XE5-FJ-Iij" firstAttribute="bottom" secondItem="Mn3-1P-pTe" secondAttribute="bottom" id="QlR-gA-SFA"/>
+                            <constraint firstItem="Mn3-1P-pTe" firstAttribute="leading" secondItem="XE5-FJ-Iij" secondAttribute="leading" id="Yde-eY-BlV"/>
+                            <constraint firstItem="XE5-FJ-Iij" firstAttribute="trailing" secondItem="Mn3-1P-pTe" secondAttribute="trailing" id="azF-si-Fs9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XE5-FJ-Iij"/>
                     </view>
                     <toolbarItems>
