@@ -191,7 +191,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-1P-pTe" customClass="MonthCollectionView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90752024594343317" green="1" blue="0.96260037378848562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydo-rj-VkI">
                                     <size key="itemSize" width="211" height="211"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -205,8 +205,23 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="opd-bU-EYd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </tableView>
+                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.89700029290857164" blue="0.96817412997922747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="opd-bU-EYd" secondAttribute="trailing" id="FHl-pf-2VT"/>
+                                            <constraint firstAttribute="bottom" secondItem="opd-bU-EYd" secondAttribute="bottom" id="GGp-cz-GsD"/>
+                                            <constraint firstItem="opd-bU-EYd" firstAttribute="leading" secondItem="aYl-gX-Hpo" secondAttribute="leading" id="pA0-C0-5ZF"/>
+                                            <constraint firstItem="opd-bU-EYd" firstAttribute="top" secondItem="aYl-gX-Hpo" secondAttribute="top" id="tsu-F6-f7E"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayTableView" destination="opd-bU-EYd" id="PdS-BT-C8B"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -235,6 +250,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="monthCollectionView" destination="Mn3-1P-pTe" id="Glf-NF-dqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDF-IL-X6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

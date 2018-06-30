@@ -10,4 +10,5 @@ import Foundation
 import UIKit
 
 class DayCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var dayTableView: UITableView!
 }

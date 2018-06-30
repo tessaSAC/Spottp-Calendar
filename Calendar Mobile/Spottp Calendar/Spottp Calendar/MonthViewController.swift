@@ -9,32 +9,41 @@
 import UIKit
 
 class MonthViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    @IBOutlet var collectionView: UICollectionView!
+    
+    @IBOutlet var monthCollectionView: UICollectionView!
+    
+    let array:[Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 , 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-            }
+        // Calculate size based on screen size
+        let dayWidth = UIScreen.main.bounds.width / 7 - 3
+        let dayHeight = UIScreen.main.bounds.height / 6 - 3
+        
+        // Each item size
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: dayWidth, height: dayHeight)
+        
+        // Spacing between each item
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
+     
+        monthCollectionView.collectionViewLayout = layout
+    }
     
     // CollectionView methods:
     
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {  // Unneeded if only 1 section
-//        return 1
-//    }
-    
     // How many items to display in collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 35
+        return array.count
     }
     
-    // Display individual cell
+    // Populate each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as UICollectionViewCell
+        let cell = monthCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
         
-//        let day = UITableView(named: "todaysEvents")
-//        cell.dayView.day = day
+        //        array[indexPath.row]
         
         return cell
     }
