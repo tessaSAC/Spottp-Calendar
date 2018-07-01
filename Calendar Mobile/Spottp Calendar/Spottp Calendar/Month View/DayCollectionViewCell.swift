@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class DayCollectionViewCell: UICollectionViewCell {
-   
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var dayTableView: MonthlyDayViewController!
+    @IBOutlet weak var todaysEventsLabel: UILabel!
 }
