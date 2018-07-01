@@ -240,6 +240,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="eventsTableView" destination="UXD-6t-9vp" id="HT6-W8-rtj"/>
+                        <outlet property="navigationBar" destination="Vt1-IU-W73" id="E7Y-J3-AvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVm-jq-2fx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,7 +29,7 @@ class EventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If a game is passed in for editing
+        // If an event is passed in for editing
         eventTitleTextField.text = event?.title
         startTextField.text = event?.start
         endTextField.text = event?.end

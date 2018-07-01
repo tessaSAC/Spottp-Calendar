@@ -22,8 +22,9 @@ class EventsTableViewCell: UITableViewCell {
 
 class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
-    var day:Day? = nil
+    var day: Day? = nil
     var events: [Event] = []
     
     override func viewDidLoad() {
@@ -32,9 +33,9 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         eventsTableView.dataSource = self
         eventsTableView.delegate = self
         
+        // Day passed in
         if day != nil {
-            print("we have a day")
-            print(day)
+            navigationBar.title = "\(day!.month).\(day!.date) plans"
         }
     }
     
