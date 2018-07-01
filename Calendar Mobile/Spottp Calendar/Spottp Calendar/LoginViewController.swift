@@ -39,7 +39,8 @@ class LoginViewController: UIViewController {
                 })
             } else {
                 print("Signed in successfully!")
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    // I don't know why it does the segue by itself regardless but it does so commenting this out because otherwise it segues twice
+//                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
     }
