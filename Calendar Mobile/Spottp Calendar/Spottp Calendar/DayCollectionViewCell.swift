@@ -12,4 +12,5 @@ import UIKit
 class DayCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var eventsTableView: UITableView!
 }

@@ -12,7 +12,9 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet var monthCollectionView: UICollectionView!
     
-    let dates:[Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 , 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+    let dates:[String] = [" ", " ", " ", " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", " "]
+    
+    let events = [[["start": "10:00AM", "end": "12:00PM", "title": "open mic", "desc": "don't forget to bring my jazz hands"]]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = monthCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
         
-        cell.dateLabel.text = String(dates[indexPath.row])
+        cell.dateLabel.text = dates[indexPath.row]
         
         return cell
     }
