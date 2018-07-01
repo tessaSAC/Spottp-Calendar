@@ -499,7 +499,8 @@
                         <barButtonItem systemItem="add" id="m85-Uz-iaL"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="june" id="pQe-7U-3xC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yeM-wG-aEd">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="yeM-wG-aEd">
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="kD6-Dy-zHs" kind="show" identifier="daySegue" id="ZqT-0X-XGi"/>
                             </connections>
