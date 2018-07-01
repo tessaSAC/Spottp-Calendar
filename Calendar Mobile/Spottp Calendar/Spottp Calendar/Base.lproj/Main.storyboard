@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--add new event-->
+        <!--create new event-->
         <scene sceneID="N61-FF-zeU">
             <objects>
                 <viewController id="NVn-YP-eGt" customClass="EventViewController" customModule="Spottp_Calendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,10 +68,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-VR-Bhs">
-                                <rect key="frame" x="152.5" y="453" width="70" height="30"/>
-                                <state key="normal" title="Add event"/>
+                                <rect key="frame" x="144.5" y="453" width="86" height="30"/>
+                                <state key="normal" title="create event"/>
                                 <connections>
-                                    <action selector="addEventTapped:" destination="NVn-YP-eGt" eventType="touchUpInside" id="YLN-3E-bL6"/>
+                                    <action selector="addUpdateEventTapped:" destination="NVn-YP-eGt" eventType="touchUpInside" id="uJS-i2-qhH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,17 +103,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Efw-Ic-LX0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="add new event" id="mxb-34-fU3">
+                    <navigationItem key="navigationItem" title="create new event" id="mxb-34-fU3">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MY4-gX-oDO">
                             <connections>
                                 <action selector="cancelTapped:" destination="NVn-YP-eGt" id="cmI-qM-IBq"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ejJ-Qw-CNe">
+                            <connections>
+                                <action selector="deleteTapped:" destination="NVn-YP-eGt" id="kj4-dR-tuY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="3ub-VR-Bhs" id="erA-Z4-LGb"/>
+                        <outlet property="deleteButton" destination="ejJ-Qw-CNe" id="ruV-0a-HnQ"/>
                         <outlet property="descriptionTextField" destination="F4O-9H-uUd" id="bmu-ms-u8S"/>
                         <outlet property="endTextField" destination="33d-aY-F9i" id="htg-g4-O1h"/>
                         <outlet property="eventTitleTextField" destination="9JM-Y1-xFv" id="e5N-8m-huE"/>
+                        <outlet property="eventViewControllerTitle" destination="mxb-34-fU3" id="I6m-IO-S1l"/>
                         <outlet property="startTextField" destination="3WL-Ke-avQ" id="cxp-6T-iAg"/>
                     </connections>
                 </viewController>
@@ -224,7 +232,7 @@
                     <navigationItem key="navigationItem" title="events" id="Vt1-IU-W73">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pzq-6e-uy6">
                             <connections>
-                                <segue destination="NVn-YP-eGt" kind="show" identifier="addEventSegue" id="bbN-LH-pSD"/>
+                                <segue destination="NVn-YP-eGt" kind="show" identifier="eventSegue" id="bbN-LH-pSD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
