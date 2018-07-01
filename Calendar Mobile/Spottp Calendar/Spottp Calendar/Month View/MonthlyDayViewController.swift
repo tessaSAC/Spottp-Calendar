@@ -8,28 +8,42 @@
 
 import UIKit
 
-class MonthlyDayViewController: UIViewController {
+class DayTableViewCell: UITableViewCell {
+     @IBOutlet weak var start: UILabel!
+     @IBOutlet weak var end: UILabel!
+     @IBOutlet weak var title: UILabel!
+}
 
+class MonthlyDayViewController: UITableViewController {
+    
+    var day: Day? = nil
+    var events: [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        if day != nil {
+            events = day!.events!.array as! [Event]
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dayTableCell") as! DayTableViewCell
+        let event = events[indexPath.row]
+        
+        print([indexPath.row])
+        
+        cell.start?.text = event.start
+        cell.end?.text = event.end
+        cell.title?.text = event.title
+        
+        return cell
+    }
+
+    
 
 }

@@ -345,11 +345,11 @@
                                                     <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Q-7A-Kvf">
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Q-7A-Kvf" customClass="MonthlyDayViewController" customModule="Spottp_Calendar" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="29.5" width="211" height="181.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventTableCell" rowHeight="84" id="SLm-eq-I3i">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayTableCell" rowHeight="84" id="SLm-eq-I3i" customClass="DayTableViewCell" customModule="Spottp_Calendar" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="211" height="84"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SLm-eq-I3i" id="mh2-QW-PTz">
@@ -401,6 +401,11 @@
                                                                     <constraint firstAttribute="trailing" secondItem="Akn-9m-x0a" secondAttribute="trailing" constant="5" id="xPB-cP-YG9"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="end" destination="Eeg-df-Rgq" id="LLd-Kf-i43"/>
+                                                                <outlet property="start" destination="t1M-Ov-R4e" id="pzX-ut-CDF"/>
+                                                                <outlet property="title" destination="qcH-gV-Yrf" id="znj-AA-i8w"/>
+                                                            </connections>
                                                         </tableViewCell>
                                                     </prototypes>
                                                 </tableView>
@@ -417,7 +422,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="dateLabel" destination="h1J-lE-Tgj" id="z9O-F8-fiS"/>
-                                            <outlet property="eventsTableView" destination="Q4Q-7A-Kvf" id="30b-Oj-3QZ"/>
+                                            <outlet property="dayTableView" destination="Q4Q-7A-Kvf" id="fJo-9R-eHC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
