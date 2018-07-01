@@ -227,6 +227,9 @@
                                             <constraint firstAttribute="trailing" secondItem="R11-2g-wPh" secondAttribute="trailing" id="s5X-fu-2UM"/>
                                             <constraint firstItem="R11-2g-wPh" firstAttribute="top" secondItem="aYl-gX-Hpo" secondAttribute="top" constant="10" id="zLA-vV-nds"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="h1J-lE-Tgj" id="z9O-F8-fiS"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="monthViewHeader" id="QAT-4D-pXT">
