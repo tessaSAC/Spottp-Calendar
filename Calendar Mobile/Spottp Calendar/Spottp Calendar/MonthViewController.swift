@@ -10,6 +10,7 @@ import UIKit
 
 class MonthViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var weekCollectionView: UICollectionView!
     @IBOutlet var monthCollectionView: UICollectionView!
     
     let array:[Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 , 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
@@ -17,12 +18,19 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let layout = UICollectionViewFlowLayout()
+        
         // Calculate size based on screen size
-        let dayWidth = UIScreen.main.bounds.width / 7 - 3
+        let weekWidth = UIScreen.main.bounds.width
+        let dayWidth = weekWidth / 7 - 3
         let dayHeight = UIScreen.main.bounds.height / 6 - 3
+        let weekHeight = dayHeight / 2
+        
+        
+        // Header size
+        layout.headerReferenceSize = CGSize(width: weekWidth, height: weekHeight);
         
         // Each item size
-        let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: dayWidth, height: dayHeight)
         
         // Spacing between each item
@@ -33,6 +41,12 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     // CollectionView methods:
+    
+    // Set header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "monthViewHeader", for: indexPath as IndexPath)
+        return headerView
+    }
     
     // How many items to display in collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -181,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="-385" y="134"/>
         </scene>
-        <!--Month View Controller-->
+        <!--Month-->
         <scene sceneID="fod-Po-9r9">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="sl5-hI-P5D" customClass="MonthViewController" customModule="Spottp_Calendar" customModuleProvider="target" sceneMemberID="viewController">
@@ -194,13 +195,13 @@
                                 <color key="backgroundColor" red="0.90752024594343317" green="1" blue="0.96260037378848562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ydo-rj-VkI">
                                     <size key="itemSize" width="211" height="211"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="aYl-gX-Hpo" customClass="DayCollectionViewCell" customModule="Spottp_Calendar" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="0.0" width="211" height="211"/>
+                                        <rect key="frame" x="82" y="50" width="211" height="211"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
@@ -224,6 +225,66 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="monthViewHeader" id="QAT-4D-pXT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="d84-uL-Z8p">
+                                            <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzN-ED-7IT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="24.5" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpU-Lm-eNO">
+                                                    <rect key="frame" x="61" y="0.0" width="15.5" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="we" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-X6-1D3">
+                                                    <rect key="frame" x="114" y="0.0" width="22" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhc-84-rJ5">
+                                                    <rect key="frame" x="173.5" y="0.0" width="15.5" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-MP-nQs">
+                                                    <rect key="frame" x="231.5" y="0.0" width="12" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="697-Fe-MoW">
+                                                    <rect key="frame" x="285" y="0.0" width="17.5" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="su" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsm-dR-gMr">
+                                                    <rect key="frame" x="340.5" y="0.0" width="18.5" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.9840329796077758" blue="0.95640390005182585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="d84-uL-Z8p" firstAttribute="top" secondItem="QAT-4D-pXT" secondAttribute="topMargin" id="1XL-D2-UjO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="d84-uL-Z8p" secondAttribute="trailing" id="GAB-WM-F8i"/>
+                                        <constraint firstItem="d84-uL-Z8p" firstAttribute="leading" secondItem="QAT-4D-pXT" secondAttribute="leadingMargin" id="WXa-Ud-gcJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="d84-uL-Z8p" secondAttribute="bottom" id="iVo-7h-qiK"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="sl5-hI-P5D" id="QYY-wG-pzB"/>
                                     <outlet property="delegate" destination="sl5-hI-P5D" id="StA-aV-HP9"/>
@@ -232,17 +293,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mn3-1P-pTe" firstAttribute="top" secondItem="XE5-FJ-Iij" secondAttribute="top" id="0va-65-YsC"/>
                             <constraint firstItem="XE5-FJ-Iij" firstAttribute="bottom" secondItem="Mn3-1P-pTe" secondAttribute="bottom" id="QlR-gA-SFA"/>
                             <constraint firstItem="Mn3-1P-pTe" firstAttribute="leading" secondItem="XE5-FJ-Iij" secondAttribute="leading" id="Yde-eY-BlV"/>
                             <constraint firstItem="XE5-FJ-Iij" firstAttribute="trailing" secondItem="Mn3-1P-pTe" secondAttribute="trailing" id="azF-si-Fs9"/>
+                            <constraint firstItem="Mn3-1P-pTe" firstAttribute="top" secondItem="XE5-FJ-Iij" secondAttribute="top" id="j2t-bA-lFw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XE5-FJ-Iij"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="add" id="m85-Uz-iaL"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="pQe-7U-3xC">
+                    <navigationItem key="navigationItem" title="Month" id="pQe-7U-3xC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yeM-wG-aEd">
                             <connections>
                                 <segue destination="NVn-YP-eGt" kind="presentation" identifier="addEventSegue" id="9gi-SK-IfG"/>
