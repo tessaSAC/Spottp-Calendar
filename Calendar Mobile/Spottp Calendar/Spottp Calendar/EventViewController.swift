@@ -22,6 +22,7 @@ class EventViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     
     // For in case an event will be edited
+    var day: Day? = nil
     var event: Event? = nil
     var eid: String? = nil
     
@@ -40,6 +41,7 @@ class EventViewController: UIViewController {
         if event != nil {
             eventViewControllerTitle.title = "edit event"
             addUpdateButton.setTitle("update", for: .normal)
+            day = event!.day
         } else {
             deleteButton.isEnabled = false
             deleteButton.tintColor = UIColor.clear
@@ -55,6 +57,7 @@ class EventViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
+        day?.removeFromEvents(event!)
         context.delete(event!)
         
         // Save and go back
@@ -78,8 +81,10 @@ class EventViewController: UIViewController {
         event!.start = startTextField.text
         event!.end = endTextField.text
         event!.desc = descriptionTextField.text
+        event!.day = day
         
         // Save and go back
+        day?.addToEvents(event!)
         appDelegate.saveContext()
         navigationController?.popViewController(animated: true)
     }

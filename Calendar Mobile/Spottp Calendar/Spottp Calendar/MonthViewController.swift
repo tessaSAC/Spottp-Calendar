@@ -25,6 +25,9 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        monthCollectionView.dataSource = self
+        monthCollectionView.delegate = self
+        
         let layout = UICollectionViewFlowLayout()
         
         // Calculate size based on screen size
@@ -79,9 +82,6 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
             
         monthCollectionView.reloadData()
-        
-        monthCollectionView.dataSource = self
-        monthCollectionView.delegate = self
     }
     
     // How many items to display in collectionView

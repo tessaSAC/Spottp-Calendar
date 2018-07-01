@@ -32,23 +32,28 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         eventsTableView.dataSource = self
         eventsTableView.delegate = self
-        
-        // Day passed in
-        if day != nil {
-            navigationBar.title = "\(day!.month).\(day!.date) plans"
-        }
     }
     
+
     override func viewWillAppear(_ animated: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
         
-        do {
-            events =  try context.fetch(Event.fetchRequest())
-            eventsTableView.reloadData()
-        } catch {
-            print("failed to fetch events")
+//        do {
+//            events =  try context.fetch(Event.fetchRequest())
+//            eventsTableView.reloadData()
+//        } catch {
+//            print("failed to fetch events")
+//        }
+        
+        // Assuming Day is passed in
+        if day != nil {
+            navigationBar.title = "\(day!.month).\(day!.date) plans"
+            events = day!.events!.array as! [Event]
         }
+        
+        // Don't forget to refresh the view!!!!!
+        eventsTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,8 +62,10 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
-        
         let event = events[indexPath.row]
+        
+        print([indexPath.row])
+        
         cell.start?.text = event.start
         cell.end?.text = event.end
         cell.title?.text = event.title
@@ -74,8 +81,10 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         performSegue(withIdentifier: "eventSegue", sender: event)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! EventViewController
+        nextVC.day = day
         nextVC.event = sender as? Event
     }
 }
