@@ -23,6 +23,7 @@ class EventsTableViewCell: UITableViewCell {
 class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventsTableView: UITableView!
     
+    var day:Day? = nil
     var events: [Event] = []
     
     override func viewDidLoad() {
@@ -30,6 +31,11 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
         eventsTableView.dataSource = self
         eventsTableView.delegate = self
+        
+        if day != nil {
+            print("we have a day")
+            print(day)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -501,7 +501,7 @@
                     <navigationItem key="navigationItem" title="june" id="pQe-7U-3xC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yeM-wG-aEd">
                             <connections>
-                                <segue destination="kD6-Dy-zHs" kind="show" id="ZqT-0X-XGi"/>
+                                <segue destination="kD6-Dy-zHs" kind="show" identifier="daySegue" id="ZqT-0X-XGi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
