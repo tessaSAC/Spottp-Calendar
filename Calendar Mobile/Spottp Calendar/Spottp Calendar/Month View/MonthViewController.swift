@@ -61,7 +61,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        // Right now I believe this will create a new set of Days every time the user starts the app
+        // Right now this will create a new set of Days every time the user starts the app
         dates.forEach{date in
             let currentDay = Int(date)
             
