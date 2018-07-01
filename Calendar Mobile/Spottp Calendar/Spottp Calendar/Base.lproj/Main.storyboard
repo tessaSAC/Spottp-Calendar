@@ -207,22 +207,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="opd-bU-EYd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="211"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </tableView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R11-2g-wPh">
+                                                    <rect key="frame" x="0.0" y="10" width="211" height="201"/>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1J-lE-Tgj">
+                                                    <rect key="frame" x="190.5" y="5" width="15.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.89700029290857164" blue="0.96817412997922747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="opd-bU-EYd" secondAttribute="trailing" id="FHl-pf-2VT"/>
-                                            <constraint firstAttribute="bottom" secondItem="opd-bU-EYd" secondAttribute="bottom" id="GGp-cz-GsD"/>
-                                            <constraint firstItem="opd-bU-EYd" firstAttribute="leading" secondItem="aYl-gX-Hpo" secondAttribute="leading" id="pA0-C0-5ZF"/>
-                                            <constraint firstItem="opd-bU-EYd" firstAttribute="top" secondItem="aYl-gX-Hpo" secondAttribute="top" id="tsu-F6-f7E"/>
+                                            <constraint firstItem="h1J-lE-Tgj" firstAttribute="top" secondItem="aYl-gX-Hpo" secondAttribute="top" constant="5" id="0zZ-vL-a0N"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1J-lE-Tgj" secondAttribute="trailing" constant="5" id="X8V-uL-C8j"/>
+                                            <constraint firstItem="R11-2g-wPh" firstAttribute="leading" secondItem="aYl-gX-Hpo" secondAttribute="leading" id="gFa-fj-S07"/>
+                                            <constraint firstAttribute="bottom" secondItem="R11-2g-wPh" secondAttribute="bottom" id="nBE-UA-B3J"/>
+                                            <constraint firstAttribute="trailing" secondItem="R11-2g-wPh" secondAttribute="trailing" id="s5X-fu-2UM"/>
+                                            <constraint firstItem="R11-2g-wPh" firstAttribute="top" secondItem="aYl-gX-Hpo" secondAttribute="top" constant="10" id="zLA-vV-nds"/>
                                         </constraints>
-                                        <connections>
-                                            <outlet property="dayTableView" destination="opd-bU-EYd" id="PdS-BT-C8B"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="monthViewHeader" id="QAT-4D-pXT">
