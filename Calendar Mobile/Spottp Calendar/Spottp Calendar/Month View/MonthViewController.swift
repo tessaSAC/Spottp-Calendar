@@ -96,7 +96,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
         var schedule = ""
         
         day.forEach{ event in
-            schedule += "\(event.start!)-\(event.end!) \(event.title!)\n"
+            schedule += "\(event.start!)~\n\(event.end!)\n\(event.title!)\n"
         }
         
         cell.dateLabel.text = dates[indexPath.row]
