@@ -21,8 +21,26 @@ class EventViewController: UIViewController {
 
     }
 
+    @IBAction func cancelTapped(_ sender: Any) {
+        print("this works")
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func addEventTapped(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let event = Event(context: context)
+        
         let eid = NSUUID().uuidString
-         dismiss(animated: true, completion: nil)
+        
+        event.eid = eid
+        event.title = eventTitleTextField.text
+        event.start = startTextField.text
+        event.end = endTextField.text
+        event.desc = descriptionTextField.text
+        
+        appDelegate.saveContext()
+        
+        navigationController?.popViewController(animated: true)
     }
 }
