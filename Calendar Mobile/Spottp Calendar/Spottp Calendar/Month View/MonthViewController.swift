@@ -12,6 +12,9 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet var monthCollectionView: UICollectionView!
     
+    // REST API location
+    let url = "https://spottp-calendar.firebaseapp.com"
+    
     // Variables to help track events per diem
     let year = 2018
     let month = 06
