@@ -19,57 +19,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Spotify TTP Fellowship Application" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-Y1-xFv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Spotify TTP Fellowship Application" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-Y1-xFv">
                                 <rect key="frame" x="20" y="120" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="event title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXf-S3-Rys">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXf-S3-Rys">
                                 <rect key="frame" x="147" y="84" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="start time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSp-kb-2k9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSp-kb-2k9">
                                 <rect key="frame" x="149" y="256" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="end time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-jp-ANB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-jp-ANB">
                                 <rect key="frame" x="152" y="342" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:00 AM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WL-Ke-avQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="9:00 AM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WL-Ke-avQ">
                                 <rect key="frame" x="20" y="292" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5:00 PM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33d-aY-F9i">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5:00 PM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33d-aY-F9i">
                                 <rect key="frame" x="20" y="378" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-VR-Bhs">
-                                <rect key="frame" x="144.5" y="453" width="86" height="30"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-VR-Bhs">
+                                <rect key="frame" x="144.5" y="458" width="86" height="30"/>
                                 <state key="normal" title="create event"/>
                                 <connections>
                                     <action selector="addUpdateEventTapped:" destination="NVn-YP-eGt" eventType="touchUpInside" id="uJS-i2-qhH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🎶 An exciting opportunity 🎶" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-9H-uUd">
-                                <rect key="frame" x="21" y="206" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="🎶 An exciting opportunity 🎶" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-9H-uUd">
+                                <rect key="frame" x="20" y="206" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-7d-dMF">
-                                <rect key="frame" x="143" y="170" width="91" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-7d-dMF">
+                                <rect key="frame" x="142" y="170" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,20 +85,21 @@
                             <constraint firstItem="9JM-Y1-xFv" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="F2o-0H-wFg"/>
                             <constraint firstItem="Efw-Ic-LX0" firstAttribute="trailing" secondItem="9JM-Y1-xFv" secondAttribute="trailing" constant="20" id="FYI-qb-cDR"/>
                             <constraint firstItem="9JM-Y1-xFv" firstAttribute="top" secondItem="ZXf-S3-Rys" secondAttribute="bottom" constant="15" id="GaZ-mA-bgs"/>
+                            <constraint firstItem="ZXf-S3-Rys" firstAttribute="top" secondItem="Efw-Ic-LX0" secondAttribute="top" constant="20" id="K07-Xv-gZz"/>
                             <constraint firstItem="3WL-Ke-avQ" firstAttribute="width" secondItem="9JM-Y1-xFv" secondAttribute="width" id="MS5-1w-pjV"/>
                             <constraint firstItem="9JM-Y1-xFv" firstAttribute="leading" secondItem="Efw-Ic-LX0" secondAttribute="leading" constant="20" id="O00-ra-AiK"/>
                             <constraint firstItem="3WL-Ke-avQ" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="Vl3-VC-tsU"/>
                             <constraint firstItem="Bwe-jp-ANB" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="Wdm-XY-IfR"/>
-                            <constraint firstItem="F4O-9H-uUd" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="aKJ-6j-lp1"/>
                             <constraint firstItem="ZXf-S3-Rys" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="b9h-j4-y5G"/>
                             <constraint firstItem="F4O-9H-uUd" firstAttribute="top" secondItem="u7C-7d-dMF" secondAttribute="bottom" constant="15" id="bXG-P4-EOV"/>
                             <constraint firstItem="3ub-VR-Bhs" firstAttribute="top" secondItem="33d-aY-F9i" secondAttribute="bottom" constant="50" id="cJe-G5-jvf"/>
                             <constraint firstItem="F4O-9H-uUd" firstAttribute="width" secondItem="9JM-Y1-xFv" secondAttribute="width" id="dEJ-gf-d3a"/>
                             <constraint firstItem="3WL-Ke-avQ" firstAttribute="top" secondItem="HSp-kb-2k9" secondAttribute="bottom" constant="15" id="ezV-4o-Gas"/>
+                            <constraint firstItem="u7C-7d-dMF" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="fxk-JW-q4e"/>
                             <constraint firstItem="33d-aY-F9i" firstAttribute="width" secondItem="3WL-Ke-avQ" secondAttribute="width" id="gjO-ar-rVx"/>
                             <constraint firstItem="u7C-7d-dMF" firstAttribute="top" secondItem="9JM-Y1-xFv" secondAttribute="bottom" constant="20" id="gxE-wt-RLx"/>
+                            <constraint firstItem="F4O-9H-uUd" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="jW7-lc-cmS"/>
                             <constraint firstItem="3ub-VR-Bhs" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="n0d-0Y-jBg"/>
-                            <constraint firstItem="u7C-7d-dMF" firstAttribute="centerX" secondItem="18L-4v-1zM" secondAttribute="centerX" id="w59-LQ-GtD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Efw-Ic-LX0"/>
                     </view>
@@ -344,9 +345,9 @@
                                                     <color key="textColor" red="0.077990044789746277" green="0.44620304404145072" blue="0.29785064086991614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's plans" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-Gh-EMd">
-                                                    <rect key="frame" x="10" y="25" width="191" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today's plans" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-Gh-EMd">
+                                                    <rect key="frame" x="10" y="25" width="191" height="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <color key="textColor" red="0.45546696000267561" green="0.52724293774191588" blue="0.61439165609137059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

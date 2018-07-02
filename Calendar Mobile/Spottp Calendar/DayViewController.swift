@@ -76,7 +76,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     // EDITING a tableViewCell:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
         let event = events[indexPath.row]
         
         performSegue(withIdentifier: "eventSegue", sender: event)

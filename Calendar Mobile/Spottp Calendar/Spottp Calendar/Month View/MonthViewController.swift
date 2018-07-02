@@ -120,6 +120,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
                                 }
                                 
                                 // Reload monthCollectionView when data is done loading
+                                // https://stackoverflow.com/questions/44870523/swift-view-loads-before-http-request-is-finished-in-viewdidload
                                 DispatchQueue.main.async{
                                     self.monthCollectionView.reloadData()
                                 }
