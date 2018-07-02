@@ -28,13 +28,13 @@ app.set('view engine', 'hbs')
 
 // Mock db:
 const events = {
-  '201867': {
+  '7': {
     '23s': {
       eid: '23s',
       title: 'my fun event',
       description: 'this is the best appointment ever you guys',
-      year: '2018',
-      month: '6',
+      // year: '2018',
+      // month: '6',
       day: '7',
       start: '10:11AM',
       end: '10:12AM'
@@ -97,31 +97,31 @@ function put(req, res) {
     eid,
     title,
     description,
-    year,
-    month,
+    // year,
+    // month,
     day,
     start,
     end
   } = req.body;
 
-  const date = year + month + day
+  // const date = year + month + day
 
   const newEvent = {
     eid,
     title,
     description,
-    year,
-    month,
+    // year,
+    // month,
     day,
     start,
     end
   }
 
-  events[date] = events[date] || {}
-  events[date][eid] = newEvent
+  events[day] = events[day] || {}
+  events[day][eid] = newEvent
 
   res.status(201)
-    // .location(`/events/${date}/${eid}`)
+    .location(`/events/${day}/${eid}`)
     .json(newEvent);
 }
 
