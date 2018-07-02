@@ -59,31 +59,9 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Fetch all events
     override func viewWillAppear(_ animated: Bool) {
         
-        // REST API location
-        let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, res, error) in
-            if error != nil {
-                print("Failed to fetch events with error \(error!)")
-            } else {
-                if let urlContent = data {
-                    do {
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers)
-                        print("hello")
-                        print(jsonResult)
-                    } catch {
-                        print("Failed to process JSON")
-                        print(urlContent)
-                    }
-                }
-            }
-        }
-        task.resume()
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        // Right now this will create a new set of Days every time the user starts the app
         dates.forEach{date in
             let currentDay = Int(date)
             
@@ -102,8 +80,58 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
             appDelegate.saveContext()
             events.append(day)
         }
-            
+        
         monthCollectionView.reloadData()
+        
+        // REST API location
+        let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, res, error) in
+            if error != nil {
+                print("Failed to fetch events with error \(error!)")
+            } else {
+                if let urlContent = data {
+                    do {
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent) as! [String:Any]
+                        
+                        // Iterate through all dates and populate events if extant
+                        self.dates.forEach{ date in
+                            if Int(date) != nil {
+                                let currentDay = self.events[Int(date)!]
+                                
+                                if jsonResult[date] != nil {
+                                    
+                                    // For each event create a new Event and add it to the current Day
+                                    for (_, jsonEvent) in jsonResult[date] as! [String: Any] {
+                                        let event = Event(context: context)
+                                        event.day = currentDay
+                                        
+                                        // Kind of gross but gets the job done
+                                        for (key, value) in jsonEvent as! [String: Any] {
+                                            if key == "eid" { event.eid = value as? String }
+                                            if key == "title" { event.title = value as? String }
+                                            if key == "desc" { event.desc = value as? String }
+                                            if key == "start" { event.start = value as? String }
+                                            if key == "end" { event.end = value as? String }
+                                        }
+                                        currentDay.addToEvents(event)
+                                        appDelegate.saveContext()
+                                    }
+                                }
+                                
+                                // Reload monthCollectionView when data is done loading
+                                DispatchQueue.main.async{
+                                    self.monthCollectionView.reloadData()
+                                }
+                            }
+                        }
+                    } catch {
+                        print("Failed to process JSON")
+                    }
+                }
+            }
+        }
+        task.resume()
     }
     
     // How many items to display in collectionView

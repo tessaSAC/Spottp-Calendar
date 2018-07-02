@@ -32,7 +32,7 @@ const events = {
     '23s': {
       eid: '23s',
       title: 'my fun event',
-      description: 'this is the best appointment ever you guys',
+      desc: 'this is the best appointment ever you guys',
       // year: '2018',
       // month: '6',
       day: '7',
@@ -96,7 +96,7 @@ function put(req, res) {
   const {
     eid,
     title,
-    description,
+    desc,
     // year,
     // month,
     day,
@@ -109,7 +109,7 @@ function put(req, res) {
   const newEvent = {
     eid,
     title,
-    description,
+    desc,
     // year,
     // month,
     day,
@@ -175,11 +175,11 @@ app.put('events/:eid', (req, res) => res.send(updateEvent(req.params.eid, req.bo
 
 // Cloud functions:
 
-function postEvent({ eid, title, description, year, month, day, start, end }) {
+function postEvent({ eid, title, desc, year, month, day, start, end }) {
   return firebase.database().ref('events/' + eid).set(JSON.parse(JSON.stringify({
     eid,
     title,
-    description,
+    desc,
     year,
     month,
     day,
@@ -195,12 +195,12 @@ function getEvents() {
   return ref.once('value').then(event => event.val())
 }
 
-function updateEvent(eid, { title, description, year, month, day, start, end }) {
+function updateEvent(eid, { title, desc, year, month, day, start, end }) {
   // An event
   const eventData = {
     eid,
     title,
-    description,
+    desc,
     year,
     month,
     day,
