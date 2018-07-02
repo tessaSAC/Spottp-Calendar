@@ -12,9 +12,6 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet var monthCollectionView: UICollectionView!
     
-    // REST API location
-    let url = "https://spottp-calendar.firebaseapp.com"
-    
     // Variables to help track events per diem
     let year = 2018
     let month = 06
@@ -61,6 +58,28 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // Fetch all events
     override func viewWillAppear(_ animated: Bool) {
+        
+        // REST API location
+        let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, res, error) in
+            if error != nil {
+                print("Failed to fetch events with error \(error!)")
+            } else {
+                if let urlContent = data {
+                    do {
+                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        print("hello")
+                        print(jsonResult)
+                    } catch {
+                        print("Failed to process JSON")
+                        print(urlContent)
+                    }
+                }
+            }
+        }
+        task.resume()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         

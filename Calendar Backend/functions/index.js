@@ -32,7 +32,7 @@ app.set('view engine', 'hbs')
 app.post('/events', (req, res) => {
   postEvent(req.body)
     .then(res => {
-      if (typeof res === String) return res.json(facts)
+      if (typeof res === String) return res
       throw new Error(res)
     })
     .catch(err => {
@@ -40,14 +40,24 @@ app.post('/events', (req, res) => {
     })
 })
 
+// GET / -- render all events to host https://spottp-calendar.firebaseapp.com
+app.get('/', (req, res) => {
+  getEvents()
+  .then(events => {
+    return res.render('index', {
+      events
+    })
+  })
+  .catch(err => {
+    throw new Error(err)
+  })
+})
+
 // GET/events -- Should return all events
 app.get('/events', (req, res) => {
   getEvents()
-    .then(facts => {
-      res.render('index', {
-        facts
-      })
-      return res.json(facts)
+    .then(events => {
+      return res.json(events)
     })
     .catch(err => {
       throw new Error(err)
@@ -66,32 +76,37 @@ app.put('events/:eid', (req, res) => res.send(updateEvent(req.params.eid, req.bo
 
 // Cloud functions:
 
-function postEvent(eid, title, description, date, startTime, endTime) {
-  firebase.database().ref('events/' + date).set({
+function postEvent({ eid, title, description, year, month, day, start, end }) {
+  return firebase.database().ref('events/' + eid).set(JSON.parse(JSON.stringify({
     eid,
     title,
     description,
-    startTime,
-    endTime
-  }, err => err ? err : 'Event added successfully!')
+    year,
+    month,
+    day,
+    start,
+    end
+  })), err => err ? err : 'Event added successfully!')
 }
 
 function getEvents() {
   // Create reference to facts
   const ref = firebaseApp.database().ref('events')
   // Get return promise and unwrap value
-  return ref.once('value').then(snap => snap.val())
+  return ref.once('value').then(event => event.val())
 }
 
-function updateEvent(eid, { title, description, date, startTime, endTime }) {
+function updateEvent(eid, { title, description, year, month, day, start, end }) {
   // An event
   const eventData = {
     eid,
     title,
     description,
-    data,
-    startTime,
-    endTime
+    year,
+    month,
+    day,
+    start,
+    end
   }
 
   // Get a key for a new Event.
