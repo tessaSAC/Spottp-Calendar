@@ -56,12 +56,27 @@ class EventViewController: UIViewController {
     @IBAction func deleteTapped(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        let date = String(day!.date)
+
+        let deleteEndpoint: String = "https://spottp-calendar.firebaseapp.com/events/\(date)/\(eid!)"
+        var request = URLRequest(url: URL(string: deleteEndpoint)!)
+        request.httpMethod = "DELETE"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let _ = data else {
+                print("Failed to delete task")
+                return
+            }
+            print("Deleted task successfully!")
+        }
+        task.resume()
         
         day?.removeFromEvents(event!)
         context.delete(event!)
         
         // Save and go back
         appDelegate.saveContext()
+        
         navigationController?.popViewController(animated: true)
     }
     
