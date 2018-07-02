@@ -117,10 +117,15 @@ function put(req, res) {
     end
   }
 
+  let statusCode  // Change status code based on http method
+
   events[day] = events[day] || {}
+
+  statusCode = events[day][eid] ? 200 : 201
+
   events[day][eid] = newEvent
 
-  res.status(201)
+  res.status(statusCode)
     .location(`/events/${day}/${eid}`)
     .json(newEvent);
 }

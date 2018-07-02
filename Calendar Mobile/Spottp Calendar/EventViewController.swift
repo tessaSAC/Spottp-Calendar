@@ -68,16 +68,16 @@ class EventViewController: UIViewController {
     @IBAction func addUpdateEventTapped(_ sender: Any) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        var restMethod = ""
+        var restMethod = "PUT"
+        var status = "200"
         
         // When creating a new event
         if event == nil {
             restMethod = "POST"
+            status = "201"
             let context = appDelegate.persistentContainer.viewContext
             event = Event(context: context)
             eid = NSUUID().uuidString
-        } else {
-            restMethod = "PUT"
         }
         
         event!.eid = eid
@@ -89,27 +89,30 @@ class EventViewController: UIViewController {
         
         // Put/Post to REST API
         let paramEvent = ["eid": eid as Any, "title": eventTitleTextField.text ?? "", "desc": descriptionTextField.text ?? "", "start": startTextField.text ?? "", "end": endTextField.text ?? "", "day": day!.date] as [String : Any]
-        let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
         guard let httpBody = try? JSONSerialization.data(withJSONObject: paramEvent, options: []) else { return }
+        
+        let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
         var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = restMethod
         request.httpBody = httpBody
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error!)")
+            // check for fundamental networking error
+            guard let data = data, error == nil else {
+                print("There was a problem uploading the event data: \(error!)")
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response!)")
+            // check for http errors
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != Int(status) {                print("Expected status code: \(status), received: \(httpStatus.statusCode)")
+                print(response!)
             }
             
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString!)")
         }
         task.resume()
+        
         // https://stackoverflow.com/questions/26364914/http-request-in-swift-with-post-method
         // https://www.youtube.com/watch?v=aTj0ZLha1zE
         
