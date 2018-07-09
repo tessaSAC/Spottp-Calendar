@@ -20,7 +20,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     let dates:[String] = [" ", " ", " ", " ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", " "]
     
     // Create events pointer
-    var events: [Day] = []
+    var events: [String: Any] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,63 +58,51 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // Fetch all events
     override func viewWillAppear(_ animated: Bool) {
-
-        dates.forEach{date in
-            let currentDay = Int(date)
-            
-            var day = Day(year: 0, month: 0, date: 0)
-            
-            if currentDay != nil {
-                day = Day(year: year, month: month, date: currentDay!)
-            }
-            
-            events.append(day)
-        }
-
-        monthCollectionView.reloadData()
         
         // REST API location
         let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!
         
+        // Fetch data
         let task = URLSession.shared.dataTask(with: url) { (data, res, error) in
             if error != nil {
                 print("Failed to fetch events with error \(error!)")
             } else {
                 if let urlContent = data {
                     do {
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent) as! [String:Any]
+                        // All the data as JSON
+                        self.events = try JSONSerialization.jsonObject(with: urlContent, options:.allowFragments) as! [String:Any]
                         
                         // Iterate through all dates and populate events if extant
-                        self.dates.forEach{ date in
-                            if Int(date) != nil {
-                                let currentDay = self.events[Int(date)!]
-                                
-                                if jsonResult[date] != nil {
-                                    
-                                    // For each event create a new Event and add it to the current Day
-                                    for (_, jsonEvent) in jsonResult[date] as! [String: Any] {
-                                        let event = Event(day: currentDay, eid: "", title: "", desc: "", start: "", end: "")
-                                        
-                                        // It seems like I have to keep this inner loop bc eid isn't detected otherwise fsr
-                                        for (key, value) in jsonEvent as! [String: Any] {
-                                            if key == "eid" { event.eid = value as! String }
-                                            if key == "title" { event.title = value as! String }
-                                            if key == "desc" { event.desc = value as! String }
-                                            if key == "start" { event.start = value as! String }
-                                            if key == "end" { event.end = value as! String }
-                                        }
-                                        
-                                        currentDay.events.append(event)
-                                    }
-                                }
-                                
-                                // Reload monthCollectionView when data is done loading
-                                // https://stackoverflow.com/questions/44870523/swift-view-loads-before-http-request-is-finished-in-viewdidload
+//                        self.dates.forEach{ date in
+//                            if Int(date) != nil {
+//                                let currentDay = self.events[Int(date)!]
+//
+//                                if jsonResult[date] != nil {
+//
+//                                    // For each event create a new Event and add it to the current Day
+//                                    for (_, jsonEvent) in jsonResult[date] as! [String: Any] {
+//                                        let event = Event(day: currentDay, eid: "", title: "", desc: "", start: "", end: "")
+//
+//                                        // It seems like I have to keep this inner loop bc eid isn't detected otherwise fsr
+//                                        for (key, value) in jsonEvent as! [String: Any] {
+//                                            if key == "eid" { event.eid = value as! String }
+//                                            if key == "title" { event.title = value as! String }
+//                                            if key == "desc" { event.desc = value as! String }
+//                                            if key == "start" { event.start = value as! String }
+//                                            if key == "end" { event.end = value as! String }
+//                                        }
+//
+//                                        currentDay.events.append(event)
+//                                    }
+//                                }
+//
+//                                // Reload monthCollectionView when data is done loading
+//                                // https://stackoverflow.com/questions/44870523/swift-view-loads-before-http-request-is-finished-in-viewdidload
                                 DispatchQueue.main.async{
                                     self.monthCollectionView.reloadData()
                                 }
-                            }
-                        }
+//                            }
+//                        }
                     } catch {
                         print("Failed to process JSON")
                     }
@@ -132,11 +120,15 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Populate each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = monthCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
-        let day = events[indexPath.row].events
+        let day = events[String(indexPath.row)] as? [String: Any]
         var schedule = ""
         
-        day.forEach{ event in
-            schedule += "\(event.start)~\n\(event.end)\n\(event.title)\n"
+        if(day != nil) {
+            for (_, event) in day! {
+                let event =  event as! [String: Any]
+                schedule += "\(event["start"]!)~\n\(event["end"]!)\n\(event["title"]!)\n"
+            }
+
         }
         
         cell.dateLabel.text = dates[indexPath.row]
@@ -148,7 +140,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Tap on a cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if Int(dates[indexPath.row]) != nil {
-            let day = events[indexPath.row]
+            let day = events[String(indexPath.row)]
             performSegue(withIdentifier: "daySegue", sender: day)
         }
     }
