@@ -24,8 +24,8 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     
-    var day: Day? = nil
-    var events: [Event] = []
+    var date: Int?
+    var events: [Any] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +34,36 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         eventsTableView.delegate = self
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
-        // Assuming Day is passed in
-        if day != nil {
-            navigationBar.title = "\(day!.month).\(day!.date) plans"
-            events = day!.events
+        if date != nil {
+            // REST API location
+            let url = URL(string: "https://spottp-calendar.firebaseapp.com/events/\(date!)")!
+            
+            // Fetch data
+            let task = URLSession.shared.dataTask(with: url) { (data, res, error) in
+                if error != nil {
+                    print("Failed to fetch events with error \(error!)")
+                } else {
+                    if let urlContent = data {
+                        do {
+                            // All the data as JSON
+                            self.events = try [JSONSerialization.jsonObject(with: urlContent, options: .allowFragments)]
+                            
+                            // Don't forget to refresh the view!!!!!
+                            DispatchQueue.main.async{
+                                self.eventsTableView.reloadData()
+                            }
+                        } catch {
+                            print("Failed to process JSON")
+                        }
+                    }
+                }
+            }
+            task.resume()
+
+            navigationBar.title = "June \(date!) plans"
         }
         
-        // Don't forget to refresh the view!!!!!
-        eventsTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,15 +72,18 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
-        let event = events[indexPath.row]
+        let event = events[indexPath.row] as! [String: Any]
         
-        print([indexPath.row])
-        
-        cell.start?.text = event.start
-        cell.end?.text = event.end
-        cell.title?.text = event.title
-        cell.desc?.text = event.desc
-        
+        // Unwrapping single inner object
+        for (_, value) in event {
+            var event = value as! [String: String]
+                
+            cell.start?.text = event["start"]
+            cell.end?.text = event["end"]
+            cell.title?.text = event["title"]
+            cell.desc?.text = event["desc"]
+        }
+
         return cell
     }
 
@@ -74,7 +97,6 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! EventViewController
-        nextVC.day = day
         nextVC.event = sender as? Event
     }
 }

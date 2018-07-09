@@ -81,15 +81,8 @@ class EventViewController: UIViewController {
         if event == nil {
             restMethod = "POST"
             status = "201"
-            event = Event(day: day!, eid: "", title: "", desc: "", start: "", end: "")
             eid = NSUUID().uuidString
         }
-        
-        event!.eid = eid!
-        event!.title = eventTitleTextField.text!
-        event!.desc = descriptionTextField.text!
-        event!.start = startTextField.text!
-        event!.end = endTextField.text!
         
         // Put/Post to REST API
         let paramEvent = ["eid": eid as Any, "title": eventTitleTextField.text ?? "", "desc": descriptionTextField.text ?? "", "start": startTextField.text ?? "", "end": endTextField.text ?? "", "day": day!.date] as [String : Any]

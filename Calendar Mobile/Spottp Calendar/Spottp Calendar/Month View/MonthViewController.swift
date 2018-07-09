@@ -72,37 +72,11 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
                         // All the data as JSON
                         self.events = try JSONSerialization.jsonObject(with: urlContent, options:.allowFragments) as! [String:Any]
                         
-                        // Iterate through all dates and populate events if extant
-//                        self.dates.forEach{ date in
-//                            if Int(date) != nil {
-//                                let currentDay = self.events[Int(date)!]
-//
-//                                if jsonResult[date] != nil {
-//
-//                                    // For each event create a new Event and add it to the current Day
-//                                    for (_, jsonEvent) in jsonResult[date] as! [String: Any] {
-//                                        let event = Event(day: currentDay, eid: "", title: "", desc: "", start: "", end: "")
-//
-//                                        // It seems like I have to keep this inner loop bc eid isn't detected otherwise fsr
-//                                        for (key, value) in jsonEvent as! [String: Any] {
-//                                            if key == "eid" { event.eid = value as! String }
-//                                            if key == "title" { event.title = value as! String }
-//                                            if key == "desc" { event.desc = value as! String }
-//                                            if key == "start" { event.start = value as! String }
-//                                            if key == "end" { event.end = value as! String }
-//                                        }
-//
-//                                        currentDay.events.append(event)
-//                                    }
-//                                }
-//
-//                                // Reload monthCollectionView when data is done loading
-//                                // https://stackoverflow.com/questions/44870523/swift-view-loads-before-http-request-is-finished-in-viewdidload
-                                DispatchQueue.main.async{
-                                    self.monthCollectionView.reloadData()
-                                }
-//                            }
-//                        }
+                        // Reload monthCollectionView when data is done loading
+                        // https://stackoverflow.com/questions/44870523/swift-view-loads-before-http-request-is-finished-in-viewdidload
+                        DispatchQueue.main.async{
+                            self.monthCollectionView.reloadData()
+                        }
                     } catch {
                         print("Failed to process JSON")
                     }
@@ -128,7 +102,6 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let event =  event as! [String: Any]
                 schedule += "\(event["start"]!)~\n\(event["end"]!)\n\(event["title"]!)\n"
             }
-
         }
         
         cell.dateLabel.text = dates[indexPath.row]
@@ -140,13 +113,13 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Tap on a cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if Int(dates[indexPath.row]) != nil {
-            let day = events[String(indexPath.row)]
-            performSegue(withIdentifier: "daySegue", sender: day)
+            let date = indexPath.row
+            performSegue(withIdentifier: "daySegue", sender: date)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! DayViewController
-        nextVC.day = sender as? Day
+        nextVC.date = sender as? Int
     }
 }
