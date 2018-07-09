@@ -36,6 +36,9 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         if date != nil {
+            // Clear events view before refetching data:
+            self.events = []
+            
             // REST API location
             let url = URL(string: "https://spottp-calendar.firebaseapp.com/events/\(date!)")!
             

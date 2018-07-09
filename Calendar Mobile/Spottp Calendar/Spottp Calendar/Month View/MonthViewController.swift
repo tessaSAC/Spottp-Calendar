@@ -94,7 +94,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Populate each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = monthCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
-        let day = events[String(indexPath.row)] as? [String: Any]
+        let day = events[String(indexPath.row - 3)] as? [String: Any]
         var schedule = ""
         
         if(day != nil) {
