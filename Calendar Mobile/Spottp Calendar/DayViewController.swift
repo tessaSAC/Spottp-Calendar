@@ -29,7 +29,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         eventsTableView.dataSource = self
         eventsTableView.delegate = self
     }
@@ -60,35 +60,34 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 }
             }
             task.resume()
-
+            
             navigationBar.title = "June \(date!) plans"
         }
         
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
-        let event = events[indexPath.row] as! [String: Any]
+        let event = events[indexPath.row] as? [String: Any]
         
-        // Unwrap (should be-)single inner object:
-        for (key, value) in event {
-            if key != "" {
-                var event = value as! [String: String]
+        if event != nil {
+            // Unwrap (should be-)single inner object:
+            for (_, value) in event! {
+                var event = value as! [String: Any]
                 
-                cell.start?.text = event["start"]
-                cell.end?.text = event["end"]
-                cell.title?.text = event["title"]
-                cell.desc?.text = event["desc"]
+                cell.start?.text = String(describing: event["start"]!)
+                cell.end?.text = String(describing: event["end"]!)
+                cell.title?.text = String(describing: event["title"]!)
+                cell.desc?.text = String(describing: event["desc"]!)
             }
         }
-        
         return cell
     }
-
+    
     // EDITING a tableViewCell:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var event = events[indexPath.row] as! [String: Any]
