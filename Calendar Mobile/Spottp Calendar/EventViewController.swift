@@ -41,7 +41,7 @@ class EventViewController: UIViewController {
                 startTextField.text = event["start"]
                 endTextField.text = event["end"]
                 descriptionTextField.text = event["desc"]
-                date = event["date"]
+                date = event["day"]
                 
                 eventViewControllerTitle.title = "edit event"
                 addUpdateButton.setTitle("update", for: .normal)
@@ -58,21 +58,23 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        let deleteEndpoint: String = "https://spottp-calendar.firebaseapp.com/events/\(date!)/\(eid!)"
-        var request = URLRequest(url: URL(string: deleteEndpoint)!)
-        request.httpMethod = "DELETE"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let _ = data else {
-                print("Failed to delete task")
-                return
+        if eid != nil && date != nil {
+            let deleteEndpoint: String = "https://spottp-calendar.firebaseapp.com/events/\(date!)/\(eid!)"
+            var request = URLRequest(url: URL(string: deleteEndpoint)!)
+            request.httpMethod = "DELETE"
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let _ = data else {
+                    print("Failed to delete task")
+                    return
+                }
+                print("Deleted task successfully!")
             }
-            print("Deleted task successfully!")
+            task.resume()
+            
+            // Go back
+            navigationController?.popViewController(animated: true)
         }
-        task.resume()
-    
-        // Go back
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addUpdateEventTapped(_ sender: Any) {
@@ -87,7 +89,7 @@ class EventViewController: UIViewController {
         }
         
         // Put/Post to REST API
-        let paramEvent = ["eid": eid, "title": eventTitleTextField.text ?? "", "desc": descriptionTextField.text ?? "", "start": startTextField.text ?? "", "end": endTextField.text ?? "", "day": date] as [String : Any]
+        let paramEvent = ["eid": eid!, "title": eventTitleTextField.text ?? "", "desc": descriptionTextField.text ?? "", "start": startTextField.text ?? "", "end": endTextField.text ?? "", "day": date!] as [String : Any]
         guard let httpBody = try? JSONSerialization.data(withJSONObject: paramEvent, options: []) else { return }
         
         let url = URL(string: "https://spottp-calendar.firebaseapp.com/events")!

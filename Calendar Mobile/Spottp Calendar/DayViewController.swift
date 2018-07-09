@@ -75,28 +75,35 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let event = events[indexPath.row] as! [String: Any]
         
         // Unwrap (should be-)single inner object:
-        for (_, value) in event {
-            var event = value as! [String: String]
+        for (key, value) in event {
+            if key != "" {
+                var event = value as! [String: String]
                 
-            cell.start?.text = event["start"]
-            cell.end?.text = event["end"]
-            cell.title?.text = event["title"]
-            cell.desc?.text = event["desc"]
+                cell.start?.text = event["start"]
+                cell.end?.text = event["end"]
+                cell.title?.text = event["title"]
+                cell.desc?.text = event["desc"]
+            }
         }
-
+        
         return cell
     }
 
     // EDITING a tableViewCell:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
-        let event = events[indexPath.row]
+        var event = events[indexPath.row] as! [String: Any]
         
-        performSegue(withIdentifier: "eventSegue", sender: event)
+        if event["date"] == nil {
+            performSegue(withIdentifier: "eventSegue", sender: String(describing: date))
+        } else {
+            performSegue(withIdentifier: "eventSegue", sender: event)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! EventViewController
-        nextVC.event = sender as! [String: Any]
+        nextVC.date = sender as? String
+        nextVC.event = sender as? [String: Any]
     }
 }

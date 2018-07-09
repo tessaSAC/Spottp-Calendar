@@ -112,8 +112,9 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // Tap on a cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(dates[indexPath.row])
         if Int(dates[indexPath.row]) != nil {
-            let date = indexPath.row
+            let date = indexPath.row - 3
             performSegue(withIdentifier: "daySegue", sender: date)
         }
     }
