@@ -54,8 +54,6 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let date = String(day!.date)
 
         let deleteEndpoint: String = "https://spottp-calendar.firebaseapp.com/events/\(date)/\(eid!)"
@@ -70,19 +68,12 @@ class EventViewController: UIViewController {
             print("Deleted task successfully!")
         }
         task.resume()
-        
-        day?.removeFromEvents(event!)
-        context.delete(event!)
-        
-        // Save and go back
-        appDelegate.saveContext()
-        
+    
+        // Go back
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addUpdateEventTapped(_ sender: Any) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var restMethod = "PUT"
         var status = "200"
         
@@ -90,17 +81,15 @@ class EventViewController: UIViewController {
         if event == nil {
             restMethod = "POST"
             status = "201"
-            let context = appDelegate.persistentContainer.viewContext
-            event = Event(context: context)
+            event = Event(day: day!, eid: "", title: "", desc: "", start: "", end: "")
             eid = NSUUID().uuidString
         }
         
-        event!.eid = eid
-        event!.title = eventTitleTextField.text
-        event!.desc = descriptionTextField.text
-        event!.start = startTextField.text
-        event!.end = endTextField.text
-        event!.day = day
+        event!.eid = eid!
+        event!.title = eventTitleTextField.text!
+        event!.desc = descriptionTextField.text!
+        event!.start = startTextField.text!
+        event!.end = endTextField.text!
         
         // Put/Post to REST API
         let paramEvent = ["eid": eid as Any, "title": eventTitleTextField.text ?? "", "desc": descriptionTextField.text ?? "", "start": startTextField.text ?? "", "end": endTextField.text ?? "", "day": day!.date] as [String : Any]
@@ -131,9 +120,7 @@ class EventViewController: UIViewController {
         // https://stackoverflow.com/questions/26364914/http-request-in-swift-with-post-method
         // https://www.youtube.com/watch?v=aTj0ZLha1zE
         
-        // Save and go back
-        day?.addToEvents(event!)
-        appDelegate.saveContext()
+        // Go back
         navigationController?.popViewController(animated: true)
     }
 }

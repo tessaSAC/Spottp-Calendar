@@ -58,29 +58,19 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // Fetch all events
     override func viewWillAppear(_ animated: Bool) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
+
         dates.forEach{date in
             let currentDay = Int(date)
             
-            let day = Day(context: context)
+            var day = Day(year: 0, month: 0, date: 0)
             
             if currentDay != nil {
-                day.date = Int32(currentDay!)
-                day.month = Int32(month)
-                day.year = Int32(year)
-            } else {
-                day.date = 0
-                day.month = 0
-                day.year = 0
+                day = Day(year: year, month: month, date: currentDay!)
             }
             
-            appDelegate.saveContext()
             events.append(day)
         }
-        
+
         monthCollectionView.reloadData()
         
         // REST API location
@@ -103,19 +93,18 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
                                     
                                     // For each event create a new Event and add it to the current Day
                                     for (_, jsonEvent) in jsonResult[date] as! [String: Any] {
-                                        let event = Event(context: context)
-                                        event.day = currentDay
+                                        let event = Event(day: currentDay, eid: "", title: "", desc: "", start: "", end: "")
                                         
-                                        // Kind of gross but gets the job done
+                                        // It seems like I have to keep this inner loop bc eid isn't detected otherwise fsr
                                         for (key, value) in jsonEvent as! [String: Any] {
-                                            if key == "eid" { event.eid = value as? String }
-                                            if key == "title" { event.title = value as? String }
-                                            if key == "desc" { event.desc = value as? String }
-                                            if key == "start" { event.start = value as? String }
-                                            if key == "end" { event.end = value as? String }
+                                            if key == "eid" { event.eid = value as! String }
+                                            if key == "title" { event.title = value as! String }
+                                            if key == "desc" { event.desc = value as! String }
+                                            if key == "start" { event.start = value as! String }
+                                            if key == "end" { event.end = value as! String }
                                         }
-                                        currentDay.addToEvents(event)
-                                        appDelegate.saveContext()
+                                        
+                                        currentDay.events.append(event)
                                     }
                                 }
                                 
@@ -143,11 +132,11 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // Populate each cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = monthCollectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as! DayCollectionViewCell
-        let day = events[indexPath.row].events!.array as! [Event]
+        let day = events[indexPath.row].events
         var schedule = ""
         
         day.forEach{ event in
-            schedule += "\(event.start!)~\n\(event.end!)\n\(event.title!)\n"
+            schedule += "\(event.start)~\n\(event.end)\n\(event.title)\n"
         }
         
         cell.dateLabel.text = dates[indexPath.row]

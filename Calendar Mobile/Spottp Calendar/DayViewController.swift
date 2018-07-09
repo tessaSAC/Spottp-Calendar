@@ -36,20 +36,10 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
 
     override func viewWillAppear(_ animated: Bool) {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-        
-//        do {
-//            events =  try context.fetch(Event.fetchRequest())
-//            eventsTableView.reloadData()
-//        } catch {
-//            print("failed to fetch events")
-//        }
-        
         // Assuming Day is passed in
         if day != nil {
             navigationBar.title = "\(day!.month).\(day!.date) plans"
-            events = day!.events!.array as! [Event]
+            events = day!.events
         }
         
         // Don't forget to refresh the view!!!!!

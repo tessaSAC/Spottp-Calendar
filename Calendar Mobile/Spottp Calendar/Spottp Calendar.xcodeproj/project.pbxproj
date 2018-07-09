@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C07C14120F2D4A500E4148D /* EventClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C07C14020F2D4A500E4148D /* EventClasses.swift */; };
 		8C109B3320E4A3140085FC42 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C109B3220E4A3140085FC42 /* EventViewController.swift */; };
 		8C109B3520E4A5E60085FC42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C109B3420E4A5E60085FC42 /* LoginViewController.swift */; };
 		8C96548C20E499920020D133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548B20E499920020D133 /* AppDelegate.swift */; };
 		8C96548E20E499920020D133 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96548D20E499920020D133 /* MonthViewController.swift */; };
 		8C96549120E499920020D133 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96548F20E499920020D133 /* Main.storyboard */; };
-		8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */; };
 		8C96549620E499920020D133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549520E499920020D133 /* Assets.xcassets */; };
 		8C96549920E499920020D133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C96549720E499920020D133 /* LaunchScreen.storyboard */; };
 		8CA093AE20E8781800EE526E /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA093AD20E8781700EE526E /* DayViewController.swift */; };
@@ -23,13 +23,13 @@
 
 /* Begin PBXFileReference section */
 		872F4B54C500E955273984D4 /* Pods-Spottp Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spottp Calendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spottp Calendar/Pods-Spottp Calendar.release.xcconfig"; sourceTree = "<group>"; };
+		8C07C14020F2D4A500E4148D /* EventClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventClasses.swift; sourceTree = "<group>"; };
 		8C109B3220E4A3140085FC42 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8C109B3420E4A5E60085FC42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C96548820E499910020D133 /* Spottp Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spottp Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C96548B20E499920020D133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C96548D20E499920020D133 /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		8C96549020E499920020D133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spottp_Calendar.xcdatamodel; sourceTree = "<group>"; };
 		8C96549520E499920020D133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C96549820E499920020D133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C96549A20E499920020D133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,11 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				8C96548F20E499920020D133 /* Main.storyboard */,
+				8C07C14020F2D4A500E4148D /* EventClasses.swift */,
 				8C96548B20E499920020D133 /* AppDelegate.swift */,
 				8C109B3420E4A5E60085FC42 /* LoginViewController.swift */,
 				8C9D64E820E97F6400AD516B /* Month View */,
 				8C9D64E920E97F8900AD516B /* Day View */,
-				8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */,
 				8C96549A20E499920020D133 /* Info.plist */,
 				8CEE74BF20E4AA8A002307CB /* GoogleService-Info.plist */,
 				8C96549720E499920020D133 /* LaunchScreen.storyboard */,
@@ -244,8 +244,8 @@
 				8C96548E20E499920020D133 /* MonthViewController.swift in Sources */,
 				8CE0178820E5EAF800B0BA7E /* DayCollectionViewCell.swift in Sources */,
 				8C109B3320E4A3140085FC42 /* EventViewController.swift in Sources */,
-				8C96549420E499920020D133 /* Spottp_Calendar.xcdatamodeld in Sources */,
 				8C109B3520E4A5E60085FC42 /* LoginViewController.swift in Sources */,
+				8C07C14120F2D4A500E4148D /* EventClasses.swift in Sources */,
 				8CA093AE20E8781800EE526E /* DayViewController.swift in Sources */,
 				8C96548C20E499920020D133 /* AppDelegate.swift in Sources */,
 			);
@@ -434,19 +434,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8C96549220E499920020D133 /* Spottp_Calendar.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */,
-			);
-			currentVersion = 8C96549320E499920020D133 /* Spottp_Calendar.xcdatamodel */;
-			path = Spottp_Calendar.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8C96548020E499910020D133 /* Project object */;
 }
