@@ -74,7 +74,7 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventsTableViewCell") as! EventsTableViewCell
         let event = events[indexPath.row] as! [String: Any]
         
-        // Unwrapping single inner object
+        // Unwrap (should be-)single inner object:
         for (_, value) in event {
             var event = value as! [String: String]
                 
@@ -97,6 +97,6 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! EventViewController
-        nextVC.event = sender as? Event
+        nextVC.event = sender as! [String: Any]
     }
 }
