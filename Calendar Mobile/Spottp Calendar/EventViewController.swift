@@ -32,20 +32,17 @@ class EventViewController: UIViewController {
         
         // If an event is passed in for editing
         if event != nil {
-            // Unwrap single inner object
-            for (_, value) in event! {
-                var event = value as! [String: String]
-                
-                eid = event["eid"]
-                eventTitleTextField.text = event["title"]
-                startTextField.text = event["start"]
-                endTextField.text = event["end"]
-                descriptionTextField.text = event["desc"]
-                date = event["day"]
-                
-                eventViewControllerTitle.title = "edit event"
-                addUpdateButton.setTitle("update", for: .normal)
-            }
+            let event = self.event as! [String: Any]
+           
+            eid = String(describing: event["eid"]!)
+            eventTitleTextField.text = String(describing: event["title"]!)
+            startTextField.text = String(describing: event["start"]!)
+            endTextField.text = String(describing: event["end"]!)
+            descriptionTextField.text = String(describing: event["desc"]!)
+            date = String(describing: event["day"]!)
+            
+            eventViewControllerTitle.title = "edit event"
+            addUpdateButton.setTitle("update", for: .normal)
         } else {
             deleteButton.isEnabled = false
             deleteButton.tintColor = UIColor.clear
@@ -53,7 +50,6 @@ class EventViewController: UIViewController {
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
-        print("this works")
         navigationController?.popViewController(animated: true)
     }
     
@@ -105,7 +101,8 @@ class EventViewController: UIViewController {
             }
             
             // check for http errors
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != Int(status) {                print("Expected status code: \(status), received: \(httpStatus.statusCode)")
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != Int(status) {
+                print("Expected status code: \(status), received: \(httpStatus.statusCode)")
                 print(response!)
             }
             

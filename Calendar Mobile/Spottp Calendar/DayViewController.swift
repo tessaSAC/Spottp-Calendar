@@ -47,7 +47,17 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     if let urlContent = data {
                         do {
                             // All the data as JSON
-                            self.events = try [JSONSerialization.jsonObject(with: urlContent, options: .allowFragments)]
+                            let json = try [JSONSerialization.jsonObject(with: urlContent, options: .allowFragments)]
+                            
+                            // Save events in array
+                            json.forEach{ eid in
+                                let eid = eid as! [String: Any]
+                                
+                                for (_, value) in eid {
+                                    let event = value as! [String: Any]
+                                    self.events.append(event)
+                                }
+                            }
                             
                             // Don't forget to refresh the view!!!!!
                             DispatchQueue.main.async{
@@ -75,34 +85,25 @@ class DayViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let event = events[indexPath.row] as? [String: Any]
         
         if event != nil {
-            // Unwrap (should be-)single inner object:
-            for (_, value) in event! {
-                var event = value as! [String: Any]
-                
-                cell.start?.text = String(describing: event["start"]!)
-                cell.end?.text = String(describing: event["end"]!)
-                cell.title?.text = String(describing: event["title"]!)
-                cell.desc?.text = String(describing: event["desc"]!)
-            }
+            let event = event as! [String: Any]
+            
+            cell.start?.text = String(describing: event["start"]!)
+            cell.end?.text = String(describing: event["end"]!)
+            cell.title?.text = String(describing: event["title"]!)
+            cell.desc?.text = String(describing: event["desc"]!)
         }
         return cell
     }
     
     // EDITING a tableViewCell:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var event = events[indexPath.row] as! [String: Any]
-        
-        if event["date"] == nil {
-            performSegue(withIdentifier: "eventSegue", sender: String(describing: date))
-        } else {
-            performSegue(withIdentifier: "eventSegue", sender: event)
-        }
-        
+        let event = events[indexPath.row] as? [String: Any]        
+        performSegue(withIdentifier: "eventSegue", sender: event)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC = segue.destination as! EventViewController
-        nextVC.date = sender as? String
+        nextVC.date = String(describing: date!)
         nextVC.event = sender as? [String: Any]
     }
 }
